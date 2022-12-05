@@ -8,3 +8,7 @@ body {
   color: #5d5fef;
   border-bottom: 1px solid #5d5fef;
 }
+
+.mouse-cursor {
+  cursor: pointer;
+}
