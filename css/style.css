@@ -12,3 +12,7 @@ body {
 .mouse-cursor {
   cursor: pointer;
 }
+
+.arrow-color {
+  color: #5d5fef;
+}
