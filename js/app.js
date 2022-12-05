@@ -29,6 +29,12 @@ const loadNews = (id) => {
 const displayNews = (data) => {
   const newsContainer = document.getElementById("news-container");
   newsContainer.textContent = "";
+
+  const itemFound = document.getElementById("item-found");
+  itemFound.innerHTML = `
+  <p class="p-3"> ${data.length} items found for this category </p>
+  `;
+
   data.forEach((news) => {
     const newsDiv = document.createElement("div");
     newsDiv.classList.add("col");
@@ -47,7 +53,7 @@ const displayNews = (data) => {
             ${news.details.slice(0, 300)}...
           </p>
 
-          <div class="row align-items-center text-center text-lg-start ">
+          <div class="row align-items-center text-center">
             <div class="col-md-4 d-flex align-items-center mt-3 mt-md-0">
              <div class = "row  align-items-center justify-content-center justify-content-lg-start">
               <div class = "col-4">  
@@ -56,7 +62,7 @@ const displayNews = (data) => {
                 } " class = "img-fluid rounded-pill"  alt="author image"> 
               </div>
             
-              <div class = "col-6">
+              <div class = "col-6 text-lg-start">
                 <span> ${
                   news.author.name ? news.author.name : "No Author Found"
                 } </span>
