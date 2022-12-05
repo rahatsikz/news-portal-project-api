@@ -24,11 +24,13 @@ const loadNews = (id) => {
     .then((res) => res.json())
     .then((data) => displayNews(data.data))
     .catch((error) => console.log(error));
+  toggleSpinner(true);
 };
 
 const displayNews = (data) => {
   const newsContainer = document.getElementById("news-container");
   newsContainer.textContent = "";
+  toggleSpinner(false);
 
   const itemFound = document.getElementById("item-found");
   itemFound.innerHTML = `
@@ -99,6 +101,15 @@ const displayNews = (data) => {
     `;
     newsContainer.appendChild(newsDiv);
   });
+};
+
+const toggleSpinner = (isLoading) => {
+  const loaderContainer = document.getElementById("loader");
+  if (isLoading) {
+    loaderContainer.classList.remove("d-none");
+  } else {
+    loaderContainer.classList.add("d-none");
+  }
 };
 
 loadCategory();

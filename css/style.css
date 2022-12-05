@@ -13,6 +13,7 @@ body {
   cursor: pointer;
 }
 
-.arrow-color {
+.arrow-color,
+.text-purple {
   color: #5d5fef;
 }
