@@ -71,6 +71,8 @@ const displayNews = (data) => {
                 <br>
                 <small class = "text-secondary" > ${
                   news.author.published_date
+                    ? news.author.published_date
+                    : "No Date Found"
                 } </small>
               </div>
              </div>

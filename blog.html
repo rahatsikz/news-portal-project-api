@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <!-- custom css  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Blog</title>
+  </head>
+  <body class="bg-light">
+    <header>
+      <!-- nav starts -->
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+          <a class="navbar-brand" class="mx-3" href="index.html"
+            ><img src="images/Frame1.png" alt="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto align-items-center">
+              <a class="nav-link mx-3" href="index.html">News</a>
+              <a
+                class="nav-link active mx-3"
+                aria-current="page"
+                href="blog.html"
+                >Blog</a
+              >
+              <a class="nav-link mx-3" href="#">
+                <img src="images/Avatar.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <hr class="container my-1" />
+      <!-- nav ends -->
+    </header>
+    <main>
+      <section class="container mt-5 w-50">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Difference between var, let, const
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                var declarations are globally scoped or function scoped while
+                let and const are block scoped.var variables can be updated and
+                re-declared within its scope; let variables can be updated but
+                not re-declared; const variables can neither be updated nor
+                re-declared.While var and let can be declared without being
+                initialized, const must be initialized during declaration.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Difference between arrow function and regular function
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                In regular function, this value is dynamic, In arrow function it
+                equals to this of the outer function.In regular function,
+                arguments will give you list of parameter passed in function, In
+                arrow function arguments is not defined.In regular function, you
+                always have to return any value, but in Arrow function you can
+                skip return keyword and write in single line.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Difference between map, forEach, filter, find
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                forEach is great when you need to execute a function for each
+                individual element in an array. Use map when you want to
+                transform elements in an array. Use filter when you want to
+                select a subset of multiple elements from an array. Use find
+                When you want to select a single element from an array.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Why should you use template strings?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Template strings are a powerful feature of modern JavaScript
+                released in ES6. It lets us insert/interpolate variables and
+                expressions into strings without needing to concatenate like in
+                older versions of JavaScript. It allows us to create strings
+                that are complex and contain dynamic elements
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- bootstrap js  -->
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
