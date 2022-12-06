@@ -32,6 +32,8 @@ const displayNews = (data) => {
   newsContainer.textContent = "";
   toggleSpinner(false);
 
+  data = data.sort((a, b) => b.total_view - a.total_view);
+
   const itemFound = document.getElementById("item-found");
   itemFound.innerHTML = `
   <p class="p-3"> ${data.length} items found for this category </p>
