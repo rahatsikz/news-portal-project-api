@@ -90,7 +90,10 @@ const displayNews = (data) => {
             <i class="fa-regular fa-star-half-stroke"></i>
           </div>
           <div class = "col-md-3 arrow-color mt-3 mt-md-0">
-            <i class="fa-solid fa-arrow-right-long"></i>
+            <i onclick = "loadDetails( '${
+              news._id
+            }' )" class="fa-solid fa-arrow-right-long mouse-cursor" data-bs-toggle="modal"
+            data-bs-target="#modalpop"></i>
           </div>
         </div>
 
@@ -112,4 +115,19 @@ const toggleSpinner = (isLoading) => {
   }
 };
 
+const loadDetails = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+    .then((res) => res.json())
+    .then((data) => displayDetails(data.data[0]))
+    .catch((error) => console.log(error));
+};
+
+const displayDetails = (detail) => {
+  const titleContainer = document.getElementById("modal-title");
+  titleContainer.innerHTML = `Author: ${detail.author.name}`;
+  const modalBodyContainer = document.getElementById("modal-body");
+  modalBodyContainer.innerHTML = `${detail.details.slice(0, 200)}`;
+};
+
 loadCategory();
+loadNews("08");
