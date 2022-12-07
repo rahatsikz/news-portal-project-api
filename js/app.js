@@ -34,6 +34,81 @@ const displayNews = (data) => {
 
   data = data.sort((a, b) => b.total_view - a.total_view);
 
+  const trendButton = document.getElementById("trend");
+  trendButton.addEventListener("click", function (event) {
+    data = data.filter((x) => x.others_info.is_trending == true);
+    newsContainer.textContent = "";
+    data.forEach((news) => {
+      const newsDiv = document.createElement("div");
+      newsDiv.classList.add("col");
+      newsDiv.innerHTML = `
+        <div class="card p-3 rounded-3">
+        <div class="row g-0">
+          <div class="col-lg-4">
+            <img src=" ${
+              news.image_url
+            } " class="img-fluid rounded-start" alt="main image" />
+          </div>
+          <div class="col-lg-8 ps-3">
+            <div class="card-body">
+              <h5 class="card-title fw-bold"> ${news.title} </h5>
+              <p class="card-text text-secondary">
+                ${news.details.slice(0, 300)}...
+              </p>
+    
+              <div class="row align-items-center text-center">
+                <div class="col-md-4 d-flex align-items-center mt-3 mt-md-0">
+                 <div class = "row  align-items-center justify-content-center justify-content-lg-start">
+                  <div class = "col-4">  
+                    <img src=" ${
+                      news.author.img
+                    } " class = "img-fluid rounded-pill"  alt="author image"> 
+                  </div>
+                
+                  <div class = "col-6 text-lg-start">
+                    <span> ${
+                      news.author.name ? news.author.name : "No Author Found"
+                    } </span>
+                    <br>
+                    <small class = "text-secondary" > ${
+                      news.author.published_date
+                        ? news.author.published_date
+                        : "No Date Found"
+                    } </small>
+                  </div>
+                 </div>
+    
+                </div>
+              <div class="col-md-2 text-secondary mt-3 mt-md-0">
+                <i class="fa-regular fa-eye pe-2"></i>
+                <span> ${
+                  news.total_view ? news.total_view : "No views Found"
+                } </span>
+              </div>
+              <div class="col-md-3 text-secondary mt-3 mt-md-0">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+              </div>
+              <div class = "col-md-3 arrow-color mt-3 mt-md-0">
+                <i onclick = "loadDetails( '${
+                  news._id
+                }' )" class="fa-solid fa-arrow-right-long mouse-cursor" data-bs-toggle="modal"
+                data-bs-target="#modalpop"></i>
+              </div>
+            </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+        `;
+      newsContainer.appendChild(newsDiv);
+    });
+  });
+
   const itemFound = document.getElementById("item-found");
   itemFound.innerHTML = `
   <p class="p-3"> ${data.length} items found for this category </p>
